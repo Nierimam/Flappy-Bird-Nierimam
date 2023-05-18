@@ -32,10 +32,10 @@ pass_pipe = False
 
 
 # load IMAGES
-bg = pygame.image.load("d:/GithubProject/Flappy-Bird-Nierimam-/gambar/bg7-01.png")
-ground = pygame.image.load("d:/GithubProject/Flappy-Bird-Nierimam-/gambar/ground.png")
+bg = pygame.image.load("d:/GithubProject/Flappy-Bird-Nierimam/gambar/bg7-01.png")
+ground = pygame.image.load("d:/GithubProject/Flappy-Bird-Nierimam/gambar/ground.png")
 button_restart = pygame.image.load(
-    "d:/GithubProject/Flappy-Bird-Nierimam-/gambar/restart.png"
+    "d:/GithubProject/Flappy-Bird-Nierimam/gambar/restart.png"
 )
 
 
@@ -50,7 +50,7 @@ def draw_text(text, font, text_colour, x, y):
 
 
 def getHighestScore():
-    with open("d:/GithubProject/Flappy-Bird-Nierimam-/highest score.rtf", "r") as f:
+    with open("d:/GithubProject/Flappy-Bird-Nierimam/highest score.rtf", "r") as f:
         return f.read()
 
 
@@ -71,7 +71,7 @@ class Bird(pygame.sprite.Sprite):
         self.counter = 0
         for num in range(1, 4):
             img = pygame.image.load(
-                f"d:/GithubProject/Flappy-Bird-Nierimam-/gambar/bird{num}.png"
+                f"d:/GithubProject/Flappy-Bird-Nierimam/gambar/bird{num}.png"
             )
             self.images.append(img)
         self.image = self.images[self.index]
@@ -118,7 +118,7 @@ class Pipe(pygame.sprite.Sprite):
     def __init__(self, x, y, position):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(
-            "d:/GithubProject/Flappy-Bird-Nierimam-/gambar/pipe.png"
+            "d:/GithubProject/Flappy-Bird-Nierimam/gambar/pipe.png"
         )
         self.rect = self.image.get_rect()
 
@@ -205,7 +205,7 @@ while run:
 
     if highestScore < score:
         highestScore = score
-    with open("d:/GithubProject/Flappy-Bird-Nierimam-/highest score.rtf", "w") as f:
+    with open("d:/GithubProject/Flappy-Bird-Nierimam/highest score.rtf", "w") as f:
         f.write(str(highestScore))
     draw_text(f"highest score: {highestScore}", font, white, int(screen_width / 8), 20)
 
